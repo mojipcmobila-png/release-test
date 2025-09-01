@@ -1,13 +1,11 @@
 module.exports = {
-    repositoryUrl: 'https://github.com/mojipcmobila-png/release-test',
-
+    // repositoryUrl: 'https://github.com/mojipcmobila-png/release-test',
     branches: [
         'main',
         { name: 'beta', prerelease: true },
 
         { name: 'alpha', prerelease: true }
     ],
-
     plugins: [
         '@semantic-release/commit-analyzer',
         '@semantic-release/release-notes-generator',
