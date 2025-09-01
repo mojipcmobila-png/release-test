@@ -1,3 +1,12 @@
+# [1.2.0](https://github.com/mojipcmobila-png/release-test/compare/v1.1.0...v1.2.0) (2025-09-01)
+
+
+### Features
+
+* **ci:** add env ([03ad32e](https://github.com/mojipcmobila-png/release-test/commit/03ad32e484a64985be6112ee4fc6ee1dd26952b2))
+* **ci:** new env ([70fa45e](https://github.com/mojipcmobila-png/release-test/commit/70fa45eb3607703468e958307ef885094071e393))
+* **core:** add npm publish ([5b5fea0](https://github.com/mojipcmobila-png/release-test/commit/5b5fea06c255bcbf041f6aac9c5d99a3e9de6874))
+
 # [1.1.0](https://github.com/mojipcmobila-png/release-test/compare/v1.0.1...v1.1.0) (2025-09-01)
 
 
