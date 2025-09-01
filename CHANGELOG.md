@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/mojipcmobila-png/release-test/compare/v1.2.1...v1.2.2) (2025-09-01)
+
+
+### Performance Improvements
+
+* **core:** update pkg.json ([dc00ec4](https://github.com/mojipcmobila-png/release-test/commit/dc00ec442ab670d79bd2e0271b463a92cc8d351c))
+
 ## [1.2.1](https://github.com/mojipcmobila-png/release-test/compare/v1.2.0...v1.2.1) (2025-09-01)
 
 
