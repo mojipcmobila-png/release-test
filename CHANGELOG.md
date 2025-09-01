@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/mojipcmobila-png/release-test/compare/v1.0.1...v1.1.0) (2025-09-01)
+
+
+### Features
+
+* **core:** add console ([eaeba76](https://github.com/mojipcmobila-png/release-test/commit/eaeba76220f7337d9a0e66d7eca3c5d2ddb1d4d0))
+* **script:** add new script ([2ce3031](https://github.com/mojipcmobila-png/release-test/commit/2ce3031085f16b42ff86998c475419814e0648a0))
+
 # [1.1.0-beta.1](https://github.com/mojipcmobila-png/release-test/compare/v1.0.0...v1.1.0-beta.1) (2025-09-01)
 
 
