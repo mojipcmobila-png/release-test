@@ -1,3 +1,15 @@
+# [1.1.0-beta.1](https://github.com/mojipcmobila-png/release-test/compare/v1.0.0...v1.1.0-beta.1) (2025-09-01)
+
+
+### Features
+
+* **script:** add new script ([2ce3031](https://github.com/mojipcmobila-png/release-test/commit/2ce3031085f16b42ff86998c475419814e0648a0))
+
+
+### Performance Improvements
+
+* **ci:** small changes ([3c10277](https://github.com/mojipcmobila-png/release-test/commit/3c1027781619101c1a42a6698ef113cf06724fc0))
+
 # 1.0.0 (2025-09-01)
 
 
