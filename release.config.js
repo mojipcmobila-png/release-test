@@ -1,7 +1,10 @@
 module.exports = {
+    repositoryUrl: 'https://github.com/mojipcmobila-png/release-test',
+
     branches: [
         'main',
         { name: 'beta', prerelease: true },
+
         { name: 'alpha', prerelease: true }
     ],
 
