@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/mojipcmobila-png/release-test/compare/v1.2.0...v1.2.1) (2025-09-01)
+
+
+### Bug Fixes
+
+* **core:** delete private key ([fa66be7](https://github.com/mojipcmobila-png/release-test/commit/fa66be727ece0b06b7d1f1ad45ab3c737cb2f4c3))
+
 # [1.2.0](https://github.com/mojipcmobila-png/release-test/compare/v1.1.0...v1.2.0) (2025-09-01)
 
 
