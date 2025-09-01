@@ -1,5 +1,5 @@
 module.exports = {
-    // repositoryUrl: 'https://github.com/mojipcmobila-png/release-test',
+    repositoryUrl: 'https://github.com/mojipcmobila-png/release-test',
     branches: [
         'main',
         {
@@ -12,11 +12,11 @@ module.exports = {
         '@semantic-release/commit-analyzer',
         '@semantic-release/release-notes-generator',
         '@semantic-release/changelog',
+        '@semantic-release/npm',
         ['@semantic-release/git', {
             assets: ['package.json', 'CHANGELOG.md'],
             message: 'chore(release): ${nextRelease.version} [skip ci]'
         }],
-        '@semantic-release/github',
-        "@semantic-release/npm"
+        '@semantic-release/github'
     ]
 }
