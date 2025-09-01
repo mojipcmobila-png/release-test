@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/mojipcmobila-png/release-test/compare/v1.2.2...v1.2.3) (2025-09-01)
+
+
+### Bug Fixes
+
+* **chore:** change order ([fd1e1f4](https://github.com/mojipcmobila-png/release-test/commit/fd1e1f4f869b07cacd797e58ef6877a427cdb863))
+
 ## [1.2.2](https://github.com/mojipcmobila-png/release-test/compare/v1.2.1...v1.2.2) (2025-09-01)
 
 
