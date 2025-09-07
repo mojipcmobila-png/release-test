@@ -1,3 +1,10 @@
+## [1.1.0-beta.3](https://github.com/mojipcmobila-png/release-test/compare/v1.1.0-beta.2...v1.1.0-beta.3) (2025-09-07)
+
+### 🚀 Features
+
+* add emoji ([fa4a989](https://github.com/mojipcmobila-png/release-test/commit/fa4a9891632f7f595fea73e0814fe85d9508a2ed))
+* add new dep ([33f00e4](https://github.com/mojipcmobila-png/release-test/commit/33f00e47bf5210abb5cd6b5f10c599c2847a8065))
+
 # [1.1.0-beta.2](https://github.com/mojipcmobila-png/release-test/compare/v1.1.0-beta.1...v1.1.0-beta.2) (2025-09-01)
 
 
