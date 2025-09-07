@@ -1,3 +1,10 @@
+## [1.3.0](https://github.com/mojipcmobila-png/release-test/compare/v1.2.3...v1.3.0) (2025-09-07)
+
+### 🚀 Features
+
+* add dep ([764c3eb](https://github.com/mojipcmobila-png/release-test/commit/764c3eba01f6c24dfea6e80b3a7f9f008db8ab51))
+* add emoji for semantic-release ([8fc47e2](https://github.com/mojipcmobila-png/release-test/commit/8fc47e2abb1c326f1a48033c4745f5f6b280f16e))
+
 ## [1.2.3](https://github.com/mojipcmobila-png/release-test/compare/v1.2.2...v1.2.3) (2025-09-01)
 
 
