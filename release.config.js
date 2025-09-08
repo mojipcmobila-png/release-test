@@ -30,10 +30,14 @@ module.exports = {
         ],
         '@semantic-release/changelog',
         '@semantic-release/npm',
-        ['@semantic-release/git', {
-            assets: ['package.json', 'CHANGELOG.md'],
-            message: 'chore(release): ${nextRelease.version} [skip ci]'
-        }],
+        [
+            '@semantic-release/git',
+            {
+                assets: ['package.json', 'CHANGELOG.md'],
+                message: 'chore(release): ${nextRelease.version} [skip ci]',
+                skip: (config) => config.branch.name === 'beta'
+            }
+        ],
         '@semantic-release/github'
     ]
 }
