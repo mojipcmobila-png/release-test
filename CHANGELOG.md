@@ -1,3 +1,9 @@
+## [1.7.0-beta.1](https://github.com/mojipcmobila-png/release-test/compare/v1.6.0...v1.7.0-beta.1) (2025-09-08)
+
+### 🚀 Features
+
+* create new log ([d0aa6c9](https://github.com/mojipcmobila-png/release-test/commit/d0aa6c95f97b436756672757b394fde54136cb75))
+
 ## [1.6.0](https://github.com/mojipcmobila-png/release-test/compare/v1.5.0...v1.6.0) (2025-09-08)
 
 ### 🚀 Features
