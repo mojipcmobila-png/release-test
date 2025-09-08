@@ -3,7 +3,7 @@ module.exports = {
     branches: [
         'main',
         {
-            name: "develop",
+            name: "beta",
             channel: "beta",
             prerelease: true
         }
