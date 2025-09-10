@@ -4,7 +4,6 @@ module.exports = {
         'main',
         {
             name: "beta",
-            channel: "beta",
             prerelease: true
         }
     ],
