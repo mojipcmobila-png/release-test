@@ -1,3 +1,9 @@
+## [1.11.0-beta.3](https://github.com/mojipcmobila-png/release-test/compare/v1.11.0-beta.2...v1.11.0-beta.3) (2025-09-10)
+
+### 🚀 Features
+
+* add new button ([52957a9](https://github.com/mojipcmobila-png/release-test/commit/52957a97bb966ce698216a7428b63e78484c41bc))
+
 ## [1.11.0-beta.2](https://github.com/mojipcmobila-png/release-test/compare/v1.11.0-beta.1...v1.11.0-beta.2) (2025-09-10)
 
 ### 🚀 Features
