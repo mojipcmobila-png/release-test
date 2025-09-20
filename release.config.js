@@ -5,7 +5,7 @@ module.exports = {
         {
             name: "develop",
             channel: "beta",
-            prerelease: true
+            prerelease: "develop"
         }
     ],
     plugins: [
