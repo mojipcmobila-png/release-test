@@ -1,3 +1,22 @@
+## [1.12.0-develop.1](https://github.com/mojipcmobila-png/release-test/compare/v1.11.0...v1.12.0-develop.1) (2025-09-20)
+
+### 🚀 Features
+
+* add log ([b21dd3e](https://github.com/mojipcmobila-png/release-test/commit/b21dd3e14261ba312611a5690460a7dc704fe9ae))
+* add log ([ceed3ae](https://github.com/mojipcmobila-png/release-test/commit/ceed3aeb949195bb2abf826bb8cf513374f03c10))
+* add new button ([52957a9](https://github.com/mojipcmobila-png/release-test/commit/52957a97bb966ce698216a7428b63e78484c41bc))
+* update deps ([b1dfe23](https://github.com/mojipcmobila-png/release-test/commit/b1dfe23ef00e46e10f74ed9e7cc734d3efde8844))
+* update workflow ([812033a](https://github.com/mojipcmobila-png/release-test/commit/812033a2f1ed54d4ad30c442309f20eda907663b))
+
+### 🧹 Chores
+
+* **release:** 1.11.0-beta.2 [skip ci] ([5eb020a](https://github.com/mojipcmobila-png/release-test/commit/5eb020a93382b3205f1d1af4205ecbabee4f9511))
+* **release:** 1.11.0-beta.3 [skip ci] ([1d1901b](https://github.com/mojipcmobila-png/release-test/commit/1d1901bad955121ffa479336c9debb424d8d5e6e))
+
+### ⚡ Performance
+
+* release ([f78621c](https://github.com/mojipcmobila-png/release-test/commit/f78621cdd8a049c6265a97f8bea76b3ba49a36c1))
+
 ## [1.11.0-beta.3](https://github.com/mojipcmobila-png/release-test/compare/v1.11.0-beta.2...v1.11.0-beta.3) (2025-09-10)
 
 ### 🚀 Features
