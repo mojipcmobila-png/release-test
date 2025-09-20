@@ -1,3 +1,9 @@
+## [1.12.0-develop.3](https://github.com/mojipcmobila-png/release-test/compare/v1.12.0-develop.2...v1.12.0-develop.3) (2025-09-20)
+
+### 🚀 Features
+
+* update config ([c22c80f](https://github.com/mojipcmobila-png/release-test/commit/c22c80ff22cf2bf7081b63b2ce77778a59e05778))
+
 ## [1.12.0-develop.2](https://github.com/mojipcmobila-png/release-test/compare/v1.12.0-develop.1...v1.12.0-develop.2) (2025-09-20)
 
 ### 🚀 Features
