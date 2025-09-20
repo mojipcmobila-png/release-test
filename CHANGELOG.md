@@ -1,3 +1,9 @@
+## [1.13.0](https://github.com/mojipcmobila-png/release-test/compare/v1.12.0...v1.13.0) (2025-09-20)
+
+### 🚀 Features
+
+* update semantic release ([78b700b](https://github.com/mojipcmobila-png/release-test/commit/78b700bb62fb55d517a4640b67214f36cc94471e))
+
 ## [1.12.0](https://github.com/mojipcmobila-png/release-test/compare/v1.11.0...v1.12.0) (2025-09-20)
 
 ### 🚀 Features
