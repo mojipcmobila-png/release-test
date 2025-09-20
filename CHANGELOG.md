@@ -1,3 +1,9 @@
+## [1.12.0-develop.2](https://github.com/mojipcmobila-png/release-test/compare/v1.12.0-develop.1...v1.12.0-develop.2) (2025-09-20)
+
+### 🚀 Features
+
+* add log ([a406c96](https://github.com/mojipcmobila-png/release-test/commit/a406c96532dbb0fd5af07dc1ed00a7d9d665a24d))
+
 ## [1.12.0-develop.1](https://github.com/mojipcmobila-png/release-test/compare/v1.11.0...v1.12.0-develop.1) (2025-09-20)
 
 ### 🚀 Features
