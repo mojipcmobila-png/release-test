@@ -1,3 +1,13 @@
+## [1.14.0](https://github.com/mojipcmobila-png/release-test/compare/v1.13.0...v1.14.0) (2025-09-20)
+
+### 🚀 Features
+
+* add log ([7f88119](https://github.com/mojipcmobila-png/release-test/commit/7f8811918be2ef63c2e2f0e7cbbaa117b50702ea))
+
+### 🧹 Chores
+
+* **release:** 1.14.0-beta.1 [skip ci] ([4ec936e](https://github.com/mojipcmobila-png/release-test/commit/4ec936ef9d031d9fdfdf04a65faf5a12d63f3568))
+
 ## [1.14.0-beta.1](https://github.com/mojipcmobila-png/release-test/compare/v1.13.0...v1.14.0-beta.1) (2025-09-20)
 
 ### 🚀 Features
