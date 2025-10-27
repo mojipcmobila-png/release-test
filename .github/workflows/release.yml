@@ -20,6 +20,9 @@ jobs:
 
       - run: npm ci
 
+      - name: Check GH_TOKEN
+        run: echo "GH_TOKEN=${GH_TOKEN}"
+
       - name: Release
         id: release
         run: npx semantic-release
