@@ -18,15 +18,15 @@ jobs:
           node-version: '20'
       - run: npm ci
 
-      - name: Count merged PRs since last release
-        id: count
-        run: |
-          LAST_TAG=$(git describe --tags --abbrev=0)
-          COUNT=$(git log $LAST_TAG..HEAD --oneline | wc -l)
-          echo "merged_pr_count=$COUNT" >> $GITHUB_OUTPUT
+      # - name: Count merged PRs since last release
+      #   id: count
+      #   run: |
+      #     LAST_TAG=$(git describe --tags --abbrev=0)
+      #     COUNT=$(git log $LAST_TAG..HEAD --oneline | wc -l)
+      #     echo "merged_pr_count=$COUNT" >> $GITHUB_OUTPUT
 
       - name: Run semantic-release pre-release
-        if: ${{ steps.count.outputs.merged_pr_count >= 2 }}
+        # if: ${{ steps.count.outputs.merged_pr_count >= 2 }}
         # if: ${{ steps.count.outputs.merged_pr_count >= 10 }}
         # if: ${{ steps.count.outputs.merged_pr_count >= 10 }}
-        run: npx semantic-release --branches develop --tag prerelease
+        run: npx semantic-release
