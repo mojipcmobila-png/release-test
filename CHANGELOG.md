@@ -1,3 +1,13 @@
+## [1.15.0](https://github.com/mojipcmobila-png/release-test/compare/v1.14.0...v1.15.0) (2025-10-27)
+
+### 🚀 Features
+
+* new workflow ([a813739](https://github.com/mojipcmobila-png/release-test/commit/a8137394cd8197fa68e383254aa9f9e11695e8ce))
+* small update ([877bd42](https://github.com/mojipcmobila-png/release-test/commit/877bd42cda0b01eb678dfa545a6265222d13cd26))
+* small update ([fbff7aa](https://github.com/mojipcmobila-png/release-test/commit/fbff7aac9304ef2919d625cfca5728c4ca3ae154))
+* small update ([08e8589](https://github.com/mojipcmobila-png/release-test/commit/08e85894d904ead7331f4ed3903601e0cc14a812))
+* small update ([46e879e](https://github.com/mojipcmobila-png/release-test/commit/46e879e6b1c1c5ceb1cc052b7bcb847a5b820ca4))
+
 ## [1.14.0](https://github.com/mojipcmobila-png/release-test/compare/v1.13.0...v1.14.0) (2025-09-20)
 
 ### 🚀 Features
