@@ -1,3 +1,19 @@
+## [1.19.0-beta.1](https://github.com/mojipcmobila-png/release-test/compare/v1.18.0...v1.19.0-beta.1) (2025-10-27)
+
+### 🚀 Features
+
+* small update ([da80e37](https://github.com/mojipcmobila-png/release-test/commit/da80e3753960e520524ef97e242ab1c994ee31e4))
+* small update ([adf8c94](https://github.com/mojipcmobila-png/release-test/commit/adf8c945172d888e9a982445d0a5104caca5c2e6))
+* small update ([b9ca402](https://github.com/mojipcmobila-png/release-test/commit/b9ca402c7fa17c6c8717be613be7184fec63ebe7))
+
+### 🐞 Bug Fixes
+
+* syntax ([983a048](https://github.com/mojipcmobila-png/release-test/commit/983a048abaeaead5c0d40469514592f44010b9e9))
+
+### 🧹 Chores
+
+* merge main after release 34243c2da558f8dc212f44876129fbb7b0775f03 ([c2a2e41](https://github.com/mojipcmobila-png/release-test/commit/c2a2e41305ecaaec7aee2a515be0a0e9fe976506))
+
 ## [1.18.0](https://github.com/mojipcmobila-png/release-test/compare/v1.17.0...v1.18.0) (2025-10-27)
 
 ### 🚀 Features
