@@ -1,6 +1,5 @@
 
 name: Pre-release on develop
-`
 on:
   push:
     branches:
