@@ -30,6 +30,12 @@ module.exports = {
         ],
         '@semantic-release/changelog',
         '@semantic-release/npm', '@semantic-release/git',
-        '@semantic-release/github'
+        '@semantic-release/github',
+        [
+            "@semantic-release/exec",
+            {
+                "successCmd": "echo 'new_version=${nextRelease.version}' >> $GITHUB_OUTPUT"
+            }
+        ]
     ]
 }
