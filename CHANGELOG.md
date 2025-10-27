@@ -1,3 +1,9 @@
+## [1.17.0](https://github.com/mojipcmobila-png/release-test/compare/v1.16.0...v1.17.0) (2025-10-27)
+
+### 🚀 Features
+
+* small update ([6a279cf](https://github.com/mojipcmobila-png/release-test/commit/6a279cf9202099d5e60407b3ffc8a7b40197490f))
+
 ## [1.16.0](https://github.com/mojipcmobila-png/release-test/compare/v1.15.0...v1.16.0) (2025-10-27)
 
 ### 🚀 Features
