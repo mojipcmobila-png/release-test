@@ -1,6 +1,6 @@
 
 name: Pre-release on develop
-
+`
 on:
   push:
     branches:
@@ -28,5 +28,6 @@ jobs:
 
       - name: Run semantic-release pre-release
         if: ${{ steps.count.outputs.merged_pr_count >= 2 }}
+        # if: ${{ steps.count.outputs.merged_pr_count >= 10 }}
         # if: ${{ steps.count.outputs.merged_pr_count >= 10 }}
         run: npx semantic-release --branches develop --tag prerelease
