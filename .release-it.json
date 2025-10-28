@@ -8,8 +8,7 @@
   "hooks": {
     "before:init": [
       "git pull --ff-only"
-    ],
-    "after:bump": "npx auto-changelog -p"
+    ]
   },
   "github": {
     "release": true,
