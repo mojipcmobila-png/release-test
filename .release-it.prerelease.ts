@@ -9,6 +9,7 @@ export default {
     github: {
         releaseName: "v${version}",
         release: true,
+        preRelease: true
     },
     npm: {
         publish: true,
