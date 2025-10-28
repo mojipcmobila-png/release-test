@@ -1,9 +1,10 @@
 {
   "name": "release-test-mojipcmobila",
-  "version": "1.27.0",
+  "version": "1.26.1",
   "scripts": {
     "semantic-release": "semantic-release",
-    "release": "release-it"
+    "release": "release-it",
+    "pre-release": "release-it --preRelease"
   },
   "author": "",
   "license": "ISC",

@@ -3,7 +3,6 @@ name: release and publish
 on:
   push:
     branches:
-      - main
       - develop
 
 jobs:
@@ -25,12 +24,7 @@ jobs:
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
       - name: Run release
-        run: |
-          if [ "${GITHUB_REF_NAME}" = "develop" ]; then
-          npx release-it --preRelease beta
-          elif [ "${GITHUB_REF_NAME}" = "main" ]; then
-          npm run release
-          fi
+        run: npm run release
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
