@@ -1,10 +1,10 @@
 {
   "name": "release-test-mojipcmobila",
-  "version": "1.26.3-0",
+  "version": "1.27.0-beta.0",
   "scripts": {
     "semantic-release": "semantic-release",
-    "release": "release-it",
-    "pre-release": "release-it --preRelease"
+    "release": "release-it --config release-it.config.ts",
+    "pre-release": "release-it --config release-it.prerelease.config.ts --preRelease=beta"
   },
   "author": "",
   "license": "ISC",
