@@ -5,17 +5,15 @@ export default {
     "commitMessage": "chore: release v${version}",
     "tagName": "v${version}",
     changelog: "CHANGELOG.md",
-
     "push": true
   },
   hooks: {
-    "before:init": [
-      "git pull"
-    ]
+    "before:init": ["git pull"]
   },
   github: {
     "release": true,
     "releaseName": "v${version}",
+    comments: { submit: false }
   },
   "npm": {
     "publish": true
@@ -72,4 +70,4 @@ export default {
       }
     }
   }
-}satisfies Config;
+} satisfies Config;
