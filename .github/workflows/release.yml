@@ -36,9 +36,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # 5️⃣ Build project
-      - name: 🏗️ Build
-        run: npm run build
+      # # 5️⃣ Build project
+      # - name: 🏗️ Build
+      #   run: npm run build
 
       # 6️⃣ Determine npm tag
       - name: 🏷️ Determine npm tag
