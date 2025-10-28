@@ -1,32 +1,39 @@
 name: release and publish
 
-on: workflow_dispatch
+on:
+  push:
+    branches:
+      - main
+      - develop
 
 jobs:
-    release:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout source code
-              uses: actions/checkout@v3
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
 
-            - name: Install dependencies
-              run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-            - name: initialize git user
-              run: |
-                  git config --global user.email "shaadcode@gmail.com"
-                  git config --global user.name "shaadcode"
-            - name: initialize the npm config
-              run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
-              env:
-                  NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-            - name: run release
-              run: npm run release --ci
-              env:
-                  NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-                  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-            - name: End message
-              run: echo "All done"
+      - name: initialize git user
+        run: |
+          git config --global user.email "shaadcode@gmail.com"
+          git config --global user.name "shaadcode"
+      - name: initialize the npm config
+        run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+        env:
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+      - name: Run release
+        run: |
+          if [ "${GITHUB_REF_NAME}" = "develop" ]; then
+          npx release-it --preRelease beta
+          elif [ "${GITHUB_REF_NAME}" = "main" ]; then
+          npx release-it
+          fi
+        env:
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 # name: 🚀 Release (Test Mode)
 
 # on:
