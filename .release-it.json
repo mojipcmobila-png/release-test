@@ -21,6 +21,7 @@
   },
   "plugins": {
     "@release-it/conventional-changelog": {
+      "path": ".",
       "infile": "CHANGELOG.md",
       "header": "# Changelog",
       "preset": {
