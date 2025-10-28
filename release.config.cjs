@@ -1,3 +1,6 @@
+/**
+ * @type {import('semantic-release').GlobalConfig}
+ */
 module.exports = {
     repositoryUrl: 'https://github.com/mojipcmobila-png/release-test',
     branches: [
@@ -5,7 +8,7 @@ module.exports = {
         {
             name: "develop",
             channel: "beta",
-            prerelease: "beta"
+            prerelease: "beta",
         }
     ],
     plugins: [
@@ -36,6 +39,7 @@ module.exports = {
             "@semantic-release/exec",
             {
                 "successCmd": "echo 'new_version=${nextRelease.version}' >> $GITHUB_OUTPUT"
+
             }
         ]
     ]
