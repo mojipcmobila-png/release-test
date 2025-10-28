@@ -1,52 +1,69 @@
-name: 🚀 Release on main
+name: Release
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*'
 
 permissions:
   contents: write
-  packages: write
-  id-token: write
 
 jobs:
   release:
-    name: 📦 Semantic Release
     runs-on: ubuntu-latest
-
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
     steps:
-      - name: 🛒 Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           fetch-depth: 0
 
-      - name: 🧰 Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
-          node-version: 20
-          cache: npm
+          node-version: 22.x
 
-      - name: 📥 Install dependencies
-        run: npm ci
+      - run: npx changelogithub
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-      - name: 🚀 Run Semantic Release
-        id: semantic
-        run: npx semantic-release
+      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
 
-      - name: Print env
-        run: printenv
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22.x
+          registry-url: 'https://registry.npmjs.org'
 
-      - name: 🔄 Sync main → develop
-        if: steps.semantic.outputs.new_release_published == 'true'
+      - run: pnpm install
+
+      - name: Build
+        run: pnpm build
+
+      - name: Determine npm tag
+        id: determine_npm_tag
+        shell: bash
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git fetch origin develop
-          git checkout develop
-          git merge --no-ff origin/main -m "chore: sync main after release"
-          git push origin develop
+          TAG="${GITHUB_REF#refs/tags/}"
+          if [[ "$TAG" =~ -(next|canary|beta|rc) ]]; then
+            # Extract pre-release tag (e.g., beta, rc)
+            NPM_TAG=${BASH_REMATCH[1]}
+          else
+            # Check if the commit is on the main branch or a version branch
+            git fetch origin main
+            CURRENT_BRANCH=$(git branch -r --contains "$GITHUB_SHA" | grep -E 'origin/(main|v[0-9]+\.[0-9]+\.x-latest)' | head -1 | sed 's/.*origin\///')
+
+            if [[ "$CURRENT_BRANCH" == "main" ]]; then
+              NPM_TAG="latest"
+            elif [[ "$CURRENT_BRANCH" =~ ^v[0-9]+\.[0-9]+\.x-latest$ ]]; then
+              # For version branches like v1.3.x-latest, v1.4.x-latest, use "latest" tag
+              NPM_TAG="latest"
+            else
+              echo "The tagged commit is not on the main branch or a version branch (v*.*.x-latest)."
+              echo "::error ::Releases with the 'latest' npm tag must be on the main branch or a version branch."
+              exit 1
+            fi
+          fi
+          echo "npm_tag=$NPM_TAG" >> $GITHUB_OUTPUT
+          echo "Using npm tag: $NPM_TAG"
+
+      - name: Publish to npm
+        run: pnpm -r publish --access public --no-git-checks --tag ${{ steps.determine_npm_tag.outputs.npm_tag }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
