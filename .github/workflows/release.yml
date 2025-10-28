@@ -1,6 +1,7 @@
 name: release and publish
 
-"on": workflow_dispatch
+on:
+    workflow_dispatch:
 
 jobs:
     release:
@@ -8,10 +9,12 @@ jobs:
         steps:
             - name: Checkout source code
               uses: actions/checkout@v3
+
             - name: Install dependencies
-              uses: npm ci
-            - name: end message
-              uses: echo "All done"
+              run: npm ci
+
+            - name: End message
+              run: echo "All done"
 # name: 🚀 Release (Test Mode)
 
 # on:
