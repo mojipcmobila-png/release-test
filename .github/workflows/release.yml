@@ -1,4 +1,4 @@
-name: Release
+name: 🚀 Release (Test Mode)
 
 on:
   push:
@@ -11,59 +11,52 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - name: 🛒 Checkout repository
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+      - name: 🧰 Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 22.x
+          cache: 'pnpm'
 
-      - run: npx changelogithub
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8
+
+      - name: 📥 Install dependencies
+        run: pnpm install
+
+      - name: 📝 Generate Changelog
+        run: npx changelogithub
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
-
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
-        with:
-          node-version: 22.x
-          registry-url: 'https://registry.npmjs.org'
-
-      - run: pnpm install
-
-      - name: Build
+      - name: 🏗️ Build
         run: pnpm build
 
-      - name: Determine npm tag
+      - name: 🏷️ Determine npm tag
         id: determine_npm_tag
         shell: bash
         run: |
           TAG="${GITHUB_REF#refs/tags/}"
+
           if [[ "$TAG" =~ -(next|canary|beta|rc) ]]; then
-            # Extract pre-release tag (e.g., beta, rc)
             NPM_TAG=${BASH_REMATCH[1]}
           else
-            # Check if the commit is on the main branch or a version branch
-            git fetch origin main
-            CURRENT_BRANCH=$(git branch -r --contains "$GITHUB_SHA" | grep -E 'origin/(main|v[0-9]+\.[0-9]+\.x-latest)' | head -1 | sed 's/.*origin\///')
-
-            if [[ "$CURRENT_BRANCH" == "main" ]]; then
-              NPM_TAG="latest"
-            elif [[ "$CURRENT_BRANCH" =~ ^v[0-9]+\.[0-9]+\.x-latest$ ]]; then
-              # For version branches like v1.3.x-latest, v1.4.x-latest, use "latest" tag
+            git fetch origin main --depth=1
+            if git merge-base --is-ancestor origin/main "$GITHUB_SHA"; then
               NPM_TAG="latest"
             else
-              echo "The tagged commit is not on the main branch or a version branch (v*.*.x-latest)."
-              echo "::error ::Releases with the 'latest' npm tag must be on the main branch or a version branch."
+              echo "::error::Tag must be from main or version branch (vX.Y.x-latest)"
               exit 1
             fi
           fi
+
           echo "npm_tag=$NPM_TAG" >> $GITHUB_OUTPUT
           echo "Using npm tag: $NPM_TAG"
-
-      # - name: Publish to npm
-      #   run: pnpm -r publish --access public --no-git-checks --tag ${{ steps.determine_npm_tag.outputs.npm_tag }}
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
