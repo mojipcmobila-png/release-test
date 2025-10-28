@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.23.0 (2025-10-28)
+
+### 🚀 Features
+
+* update ([d8c45ac](https://github.com/mojipcmobila-png/release-test/commit/d8c45acc75a6e45dffda73c2052be4a5dcba7979))
+
 ## 1.22.1 (2025-10-28)
 
 ### 🐞 Bug Fixes
