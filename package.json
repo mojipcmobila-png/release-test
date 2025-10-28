@@ -2,7 +2,8 @@
   "name": "release-test-mojipcmobila",
   "version": "1.20.0",
   "scripts": {
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "release": "release-it"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +13,7 @@
     "@semantic-release/exec": "^7.1.0",
     "@semantic-release/git": "^10.0.1",
     "conventional-changelog-conventionalcommits": "^9.1.0",
+    "release-it": "^19.0.5",
     "semantic-release": "^24.2.7"
   }
 }
