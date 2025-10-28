@@ -2,14 +2,13 @@ import type { Config } from "release-it";
 
 export default {
     git: {
-        commit: false,
-        tag: false,
-        push: false,
+        "commitMessage": "chore: release v${version}",
+        "tagName": "v${version}",
+        "push": true
     },
     github: {
         releaseName: "v${version}",
         release: true,
-        preRelease: true
     },
     npm: {
         publish: true,
