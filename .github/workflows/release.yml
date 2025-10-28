@@ -12,6 +12,19 @@ jobs:
             - name: Install dependencies
               run: npm ci
 
+            - name: initialize git user
+              run: |
+                  git config --global user.email "shaadcode@gmail.com"
+                  git config --global user.name "shaadcode"
+            - name: initialize the npm config
+              run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+              env:
+                  NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+            - name: run release
+              run: npm run release --ci
+              env:
+                  NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+                  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
             - name: End message
               run: echo "All done"
 # name: 🚀 Release (Test Mode)
