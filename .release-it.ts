@@ -1,17 +1,19 @@
 import type { Config } from 'release-it';
 
 export default {
-  "git": {
+  git: {
     "commitMessage": "chore: release v${version}",
     "tagName": "v${version}",
+    changelog: "CHANGELOG.md",
+
     "push": true
   },
-  "hooks": {
+  hooks: {
     "before:init": [
       "git pull"
     ]
   },
-  "github": {
+  github: {
     "release": true,
     "releaseName": "v${version}",
   },
