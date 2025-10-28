@@ -13,33 +13,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Checkout repository
       - name: 🛒 Checkout repository
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
+      # 2️⃣ Setup Node.js
       - name: 🧰 Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22.x
-          cache: 'pnpm'
+          cache: 'npm'
 
-      - name: 📦 Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 8
-
+      # 3️⃣ Install dependencies
       - name: 📥 Install dependencies
-        run: pnpm install
+        run: npm ci
 
+      # 4️⃣ Generate Changelog
       - name: 📝 Generate Changelog
         run: npx changelogithub
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # 5️⃣ Build project
       - name: 🏗️ Build
-        run: pnpm build
+        run: npm run build
 
+      # 6️⃣ Determine npm tag
       - name: 🏷️ Determine npm tag
         id: determine_npm_tag
         shell: bash
