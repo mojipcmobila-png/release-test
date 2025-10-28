@@ -26,6 +26,7 @@ jobs:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
       - name: Run release
         run: |
+          cd $GITHUB_WORKSPACE
           if [ "${GITHUB_REF_NAME}" = "develop" ]; then
           npx release-it --preRelease beta
           elif [ "${GITHUB_REF_NAME}" = "main" ]; then
