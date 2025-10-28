@@ -28,6 +28,19 @@ module.exports = {
                         { type: 'test', section: '✅ Tests', hidden: false },
                         { type: 'style', section: '🎨 Styles', hidden: false }
                     ]
+                },
+                writerOpts: {
+                    transform: (commit) => {
+                        console.log(commit)
+                        const msg = commit.header || '';
+                        if (
+                            msg.match(/^chore:\s*merge main after release/i) ||
+                            msg.match(/^release:\s*\d+\.\d+\.\d+-beta\.\d+/i)
+                        ) {
+                            return;
+                        }
+                        return commit;
+                    }
                 }
             }
         ],
