@@ -15,13 +15,13 @@ jobs:
     steps:
       # 1️⃣ Checkout repository
       - name: 🛒 Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
       # 2️⃣ Setup Node.js
       - name: 🧰 Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           node-version: 22.x
           cache: 'npm'
@@ -61,3 +61,20 @@ jobs:
 
           echo "npm_tag=$NPM_TAG" >> $GITHUB_OUTPUT
           echo "Using npm tag: $NPM_TAG"
+
+
+      - name: Publish to npm
+        run: npm publish --access public --tag ${{ steps.determine_npm_tag.outputs.npm_tag }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: 🔄 Sync main → develop
+        if: ${{ success() }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin develop
+          git checkout develop
+          git pull origin develop
+          git merge --no-ff origin/main -m "chore: sync main after release $GITHUB_REF" || true
+          git push origin develop
