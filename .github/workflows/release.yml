@@ -76,5 +76,5 @@ jobs:
           git fetch origin develop
           git checkout develop
           git pull origin develop
-          git merge --no-ff origin/main -m "chore: sync main after release $GITHUB_REF" || true
+          git merge --no-ff origin/main -m "chore: sync main after release $GITHUB_REF" --allow-unrelated-histories || true
           git push origin develop
