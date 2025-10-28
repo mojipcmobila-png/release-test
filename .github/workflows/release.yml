@@ -14,8 +14,8 @@ jobs:
 
             - name: initialize git user
               run: |
-                  git config --global user.email "shaadcode@gmail.com"
-                  git config --global user.name "shaadcode"
+                  git config --global user.name "CI Release Bot"
+                  git config --global user.email "ci-bot@users.noreply.github.com"
             - name: initialize the npm config
               run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
               env:
