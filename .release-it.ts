@@ -1,5 +1,6 @@
-{
-  "$schema": "https://unpkg.com/release-it@19/schema/release-it.json",
+import type { Config } from 'release-it';
+
+export default {
   "git": {
     "commitMessage": "chore: release v${version}",
     "tagName": "v${version}",
@@ -13,7 +14,6 @@
   "github": {
     "release": true,
     "releaseName": "v${version}",
-    "changelog": "CHANGELOG.md"
   },
   "npm": {
     "publish": true
@@ -70,4 +70,4 @@
       }
     }
   }
-}
+}satisfies Config;
