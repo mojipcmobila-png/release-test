@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout source code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Install dependencies
         run: npm ci
@@ -28,82 +30,12 @@ jobs:
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-# name: 🚀 Release (Test Mode)
-
-# on:
-#   push:
-#     tags:
-#       - 'v*'
-
-# permissions:
-#   contents: write
-
-# jobs:
-#   release:
-#     runs-on: ubuntu-latest
-
-#     steps:
-#       # 1️⃣ Checkout repository
-#       - name: 🛒 Checkout repository
-#         uses: actions/checkout@v3
-#         with:
-#           fetch-depth: 0
-
-#       # 2️⃣ Setup Node.js
-#       - name: 🧰 Setup Node.js
-#         uses: actions/setup-node@v3
-#         with:
-#           node-version: 22.x
-#           cache: 'npm'
-
-#       # 3️⃣ Install dependencies
-#       - name: 📥 Install dependencies
-#         run: npm ci
-
-#       # 4️⃣ Generate Changelog
-#       - name: 📝 Generate Changelog
-#         run: npx changelogithub
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-#       # # 5️⃣ Build project
-#       # - name: 🏗️ Build
-#       #   run: npm run build
-
-#       # 6️⃣ Determine npm tag
-#       - name: 🏷️ Determine npm tag
-#         id: determine_npm_tag
-#         shell: bash
-#         run: |
-#           TAG="${GITHUB_REF#refs/tags/}"
-
-#           if [[ "$TAG" =~ -(next|canary|beta|rc) ]]; then
-#             NPM_TAG=${BASH_REMATCH[1]}
-#           else
-#             git fetch origin main --depth=1
-#             if git merge-base --is-ancestor origin/main "$GITHUB_SHA"; then
-#               NPM_TAG="latest"
-#             else
-#               echo "::error::Tag must be from main or version branch (vX.Y.x-latest)"
-#               exit 1
-#             fi
-#           fi
-
-#           echo "npm_tag=$NPM_TAG" >> $GITHUB_OUTPUT
-#           echo "Using npm tag: $NPM_TAG"
-
-#       # - name: Publish to npm
-#       #   run: npm publish --access public --tag ${{ steps.determine_npm_tag.outputs.npm_tag }}
-#       #   env:
-#       #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-#       - name: 🔄 Sync main → develop
-#         if: ${{ success() }}
-#         run: |
-#           git config user.name "github-actions[bot]"
-#           git config user.email "github-actions[bot]@users.noreply.github.com"
-#           git fetch origin develop
-#           git checkout develop
-#           git pull origin develop
-#           git merge --no-ff origin/main -m "chore: sync main after release $GITHUB_REF" --allow-unrelated-histories || true
-#           git push origin develop
+      - name: Create PR to merge main → develop
+        if: success()
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: develop
+          branch: sync-main-to-develop
+          title: "Sync main → develop"
+          body: "This PR was automatically created after release to sync main into develop."
