@@ -1,6 +1,6 @@
 {
   "name": "release-test-mojipcmobila",
-  "version": "1.26.2",
+  "version": "1.27.0-0",
   "scripts": {
     "semantic-release": "semantic-release",
     "release": "release-it",

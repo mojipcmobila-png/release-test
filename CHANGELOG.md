@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.27.0-0](https://github.com/mojipcmobila-png/release-test/compare/v1.26.2...v1.27.0-0) (2025-10-28)
+
+### 🚀 Features
+
+* update ([#49](https://github.com/mojipcmobila-png/release-test/issues/49)) ([1ff2759](https://github.com/mojipcmobila-png/release-test/commit/1ff2759a001dc81514a0268b1ba557d6102ce635))
+
 ## 1.26.2 (2025-10-28)
 
 ### 🐞 Bug Fixes
