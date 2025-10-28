@@ -3,7 +3,7 @@ name: release and publish
 on:
   push:
     branches:
-      - develop
+      - main
 
 jobs:
   release:
