@@ -1,3 +1,9 @@
+## [1.20.0-beta.2](https://github.com/mojipcmobila-png/release-test/compare/v1.20.0-beta.1...v1.20.0-beta.2) (2025-10-28)
+
+### 🐞 Bug Fixes
+
+* small change ([7856cd1](https://github.com/mojipcmobila-png/release-test/commit/7856cd1deabcab3c52184ce82e4bf94855ff9e33))
+
 ## [1.20.0-beta.1](https://github.com/mojipcmobila-png/release-test/compare/v1.19.0...v1.20.0-beta.1) (2025-10-28)
 
 ### 🚀 Features
