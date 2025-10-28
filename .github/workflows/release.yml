@@ -27,9 +27,9 @@ jobs:
       - name: Run release
         run: |
           if [ "${GITHUB_REF_NAME}" = "develop" ]; then
-          npx release-it --preRelease beta
+          npx release-it --preRelease beta --verbose
           elif [ "${GITHUB_REF_NAME}" = "main" ]; then
-          npx release-it
+          npx release-it --verbose
           fi
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
