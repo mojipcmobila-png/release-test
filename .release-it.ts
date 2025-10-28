@@ -4,7 +4,6 @@ export default {
   git: {
     "commitMessage": "chore: release v${version}",
     "tagName": "v${version}",
-    changelog: "CHANGELOG.md",
     "push": true
   },
   hooks: {
@@ -13,14 +12,13 @@ export default {
   github: {
     "release": true,
     "releaseName": "v${version}",
-    comments: { submit: false }
+    changelog: "CHANGELOG.md"
   },
   "npm": {
     "publish": true
   },
   "plugins": {
     "@release-it/conventional-changelog": {
-      "path": ".",
       "infile": "CHANGELOG.md",
       "header": "# Changelog",
       "preset": {
