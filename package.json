@@ -4,7 +4,7 @@
   "scripts": {
     "semantic-release": "semantic-release",
     "release": "release-it --config release-it.config.ts",
-    "pre-release": "release-it --config release-it.prerelease.config.ts --preRelease=beta"
+    "pre-release": "release-it --config .release-it.prerelease.ts --preRelease=beta"
   },
   "author": "",
   "license": "ISC",
