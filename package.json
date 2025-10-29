@@ -1,6 +1,6 @@
 {
   "name": "release-test-mojipcmobila",
-  "version": "1.30.2",
+  "version": "1.30.3",
   "scripts": {
     "semantic-release": "semantic-release",
     "release": "release-it --config release-it.config.ts",
