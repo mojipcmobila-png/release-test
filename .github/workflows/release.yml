@@ -1,10 +1,7 @@
 name: release and publish
 
 on:
-  push:
-    branches:
-      - main
-
+  workflow_dispatch:
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -12,6 +9,7 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
         with:
+          ref: main
           fetch-depth: 0
 
       - name: Install dependencies
@@ -30,12 +28,3 @@ jobs:
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      # - name: Create PR to merge main → develop
-      #   if: success()
-      #   uses: peter-evans/create-pull-request@v6
-      #   with:
-      #     token: ${{ secrets.GITHUB_TOKEN }}
-      #     base: develop
-      #     branch: sync-main-to-develop
-      #     title: "Sync main → develop"
-      #     body: "This PR was automatically created after release to sync main into develop."
