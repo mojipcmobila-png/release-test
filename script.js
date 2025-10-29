@@ -1,22 +1,4 @@
 "use strict"
 
 
-console.log("first")
-console.log("first")
-console.log("first")
-console.log("first")
-console.log("first")
-console.log("first")
-console.log("first")
-console.log("first")
-console.log("first")
-console.log("first")
-console.log("first")
-console.log("first")
-console.log("first")
-console.log("first")
-console.log("develop-fix-x")
-console.log("develop-fix-x")
-console.log("develop-fix-x")
-console.log("develop-fix-a")
-console.log("develop-fix-update-script")
+console.log("update")
