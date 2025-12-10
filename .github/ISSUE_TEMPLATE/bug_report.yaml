@@ -1,15 +1,51 @@
-name: Bug Report
-description: Report a bug you've found
-labels: "bug"
+name: گزارش خطا
+description: گزارش باگ یا مشکلی که در پروژه رخ داده است
+title: ""
+labels: []
+assignees: []
+
 body:
-    - type: markdown
-      attributes:
-          value: |
-              thanks for taking the time to fill out this bug report!
-    - type: textarea
-      attributes:
-        label: what happened?
-        description: also tell us, what did you expect to happen?
-        placeholder: tell us what you see!
-      validations:
-          required: true
+  - type: markdown
+    attributes:
+      value: |
+        ## توضیحات  
+        لطفاً اطلاعات مربوط به باگ یا مشکل را وارد کنید.
+
+  - type: textarea
+    id: current_behavior
+    attributes:
+      label: 🐞 رفتار فعلی
+      description: توضیح کوتاه درباره رفتار فعلی
+      placeholder: رفتار فعلی را توضیح دهید...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: ✅ رفتار مورد انتظار
+      description: توضیح کوتاه درباره چیزی که انتظار داری
+      placeholder: رفتار مورد انتظار چیست؟
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 🔄 مراحل بازتولید
+      description: مراحل مرحله‌به‌مرحله برای بازتولید مشکل
+      placeholder: |
+        1. وارد صفحه X شوید
+        2. روی دکمه Y کلیک کنید
+        3. رفتار مشاهده‌شده رخ می‌دهد
+    validations:
+      required: false
+
+  - type: input
+    id: link
+    attributes:
+      label: 🔗 لینک / صفحه
+      description: صفحه یا آدرسی که این اتفاق در آن رخ داده
+      placeholder: لینک موردنظر را وارد کنید
+    validations:
+      required: false
