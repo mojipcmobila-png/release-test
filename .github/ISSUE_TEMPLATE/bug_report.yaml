@@ -8,5 +8,8 @@ body:
               thanks for taking the time to fill out this bug report!
     - type: textarea
       attributes:
-        value: |
-         hello
+        label: what happened?
+        description: also tell us, what did you expect to happen?
+        palceholder: tell us what you see!
+      validations:
+          required: true
