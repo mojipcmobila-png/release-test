@@ -1,6 +1,6 @@
 name: 🐞 گزارش خطا
 description: گزارش باگ یا مشکلی که در پروژه رخ داده است
-labels: []
+labels: ["bug"]
 assignees: ["shaadcode"]
 
 body:
